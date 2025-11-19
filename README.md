@@ -1,10 +1,10 @@
-# 🩺 Visualización y análisis de datos médicos
+# Visualización y análisis de datos médicos
 
 En este proyecto se visualizan y analizan datos de exámenes médicos utilizando **pandas**, **NumPy**, **matplotlib** y **seaborn**. Los valores del conjunto de datos fueron recopilados durante exámenes médicos de rutina.
 
 ---
 
-## 📁 Archivo de datos
+## Archivo de datos
 
 **Nombre del archivo:** `medical_examination.csv`  
 Cada fila representa un paciente. Las columnas contienen medidas corporales, resultados de análisis de sangre y hábitos de vida.
@@ -26,7 +26,7 @@ Cada fila representa un paciente. Las columnas contienen medidas corporales, res
 
 ---
 
-## 📊 Objetivos del proyecto
+## Objetivos del proyecto
 
 1. **Visualizar recuentos de variables categóricas** (colesterol, glucosa, alcohol, actividad física, tabaquismo, sobrepeso) separadas por presencia o ausencia de enfermedad cardiovascular.
 2. **Limpiar y normalizar los datos** para análisis estadístico.
@@ -34,27 +34,31 @@ Cada fila representa un paciente. Las columnas contienen medidas corporales, res
 
 ---
 
-## 🧪 Instrucciones técnicas
 
-### 🔹 Preparación de datos
+###  Preparación de datos
+Esta etapa incluye la carga del archivo, la exploración inicial y la transformación de variables clínicas para facilitar el análisis.
 
-- Importar el archivo `medical_examination.csv` y asignarlo a la variable `df`.
-- Agregar una columna `overweight` calculando el IMC:  
-  
+**Carga del archivo:**  
+Se importa el archivo `medical_examination.csv` y se asigna a la variable `df`.
 
-\[
-  \text{IMC} = \frac{\text{peso (kg)}}{(\text{altura (m)})^2}
-  \]
+**Exploración inicial:**  
+Se inspecciona la forma del dataset, las primeras filas, el tipo de datos y la presencia de valores nulos.  
+Esto permite verificar:  
+- Cantidad de pacientes y variables  
+- Tipos de datos (enteros, flotantes, categóricos)  
+- Posibles columnas con valores faltantes  
 
-  
-  Si IMC > 25 → `overweight = 1`, si no → `overweight = 0`.
+**Transformación de variables clínicas:** Para garantizar la calidad de las visualizaciones, se definieron funciones auxiliares que permiten filtrar valores extremos y transformar variables clínicas.
 
-- Normalizar las variables `cholesterol` y `gluc`:  
-  - Si el valor es 1 → bueno → asignar 0  
-  - Si el valor es 2 o 3 → malo → asignar 1
+- **Cálculo del IMC y clasificación de sobrepeso:** se agrega la columna `BMI` y se clasifica como `overweight` si el IMC supera 25.  
+- **Normalización de colesterol y glucosa:** se convierten en variables binarias:  
+  - `cholesterol`: 0 = normal, 1 = alto o muy alto  
+  - `gluc`: 0 = normal, 1 = alto o muy alto  
+- **Conversión de edad:** la edad original está en días. Se transforma a años (`age_years`) para facilitar la interpretación.
+- **Filtrado de outliers:** se eliminan valores extremos de una columna numérica utilizando percentiles (1% y 99%).  Esto evita que valores atípicos distorsionen los gráficos y el análisis estadístico.
 
----
 
+### Visualizaciones Mathplotlib
 
 
 
