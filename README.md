@@ -30,7 +30,7 @@ Cada fila representa un paciente. Las columnas contienen medidas corporales, res
 
 1. **Visualizar recuentos de variables categóricas** (colesterol, glucosa, alcohol, actividad física, tabaquismo, sobrepeso) separadas por presencia o ausencia de enfermedad cardiovascular.
 2. **Limpiar y normalizar los datos** para análisis estadístico.
-3. **Generar un mapa de calor** con correlaciones entre variables clínicas.
+3. 
 
 ---
 
@@ -55,31 +55,12 @@ Cada fila representa un paciente. Las columnas contienen medidas corporales, res
 
 ---
 
-### 🔹 Gráfico categórico (`draw_cat_plot`)
 
-- Usar `pd.melt()` para transformar las variables: `cholesterol`, `gluc`, `smoke`, `alco`, `active`, `overweight`.
-- Agrupar por `cardio`, `variable`, `value` y contar ocurrencias.
-- Renombrar columnas para que `sns.catplot()` funcione correctamente.
-- Crear el gráfico con `sns.catplot()` y guardar en la variable `fig`.
 
----
 
-### 🔹 Mapa de calor (`draw_heat_map`)
-
-- Filtrar datos incorrectos:
-  - `ap_lo` ≤ `ap_hi`
-  - `height` entre percentiles 2.5 y 97.5
-  - `weight` entre percentiles 2.5 y 97.5
-
-- Calcular la matriz de correlación con `df.corr()` → guardar en `corr`.
-- Generar una máscara para el triángulo superior → guardar en `mask`.
-- Configurar la figura y graficar con `sns.heatmap()`.
-
----
 
 ## 📌 Notas
 
-- No modificar las dos líneas finales de cada función (`draw_cat_plot`, `draw_heat_map`) para asegurar compatibilidad con el entorno de evaluación.
 - Este proyecto forma parte del módulo de análisis de datos médicos de [freeCodeCamp](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/medical-data-visualizer).
 
 ---
