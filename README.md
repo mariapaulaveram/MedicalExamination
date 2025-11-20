@@ -1,7 +1,6 @@
 # Visualización y análisis de datos médicos
 
-En este proyecto se visualizan y analizan datos de exámenes médicos utilizando **pandas**, **NumPy**, **matplotlib** y **seaborn**. Los valores del conjunto de datos fueron recopilados durante exámenes médicos de rutina.
-
+Este proyecto aplica técnicas de análisis de datos clínicos y visualización utilizando librerías de Python como NumPy, pandas, matplotlib y seaborn. El dataset (medical_examination.csv) contiene información de pacientes obtenida en exámenes médicos de rutina: edad, peso, altura, presión arterial, colesterol, glucosa y hábitos de vida.
 ---
 
 ## Archivo de datos
@@ -28,14 +27,22 @@ Cada fila representa un paciente. Las columnas contienen medidas corporales, res
 
 ## Objetivos del proyecto
 
-1. **Visualizar recuentos de variables categóricas** (colesterol, glucosa, alcohol, actividad física, tabaquismo, sobrepeso) separadas por presencia o ausencia de enfermedad cardiovascular.
-2. **Limpiar y normalizar los datos** para análisis estadístico.
-3. 
+Este proyecto tiene como propósito aplicar y consolidar conocimientos adquiridos en el curso [Python para Data Science – Udemy](https://www.udemy.com/course/python-para-data-science/), utilizando un conjunto de datos clínicos del proyecto [Medical Data Visualizer – FreeCodeCamp](https://www.freecodecamp.org/espanol/learn/data-analysis-with-python/data-analysis-with-python-projects/medical-data-visualizer).
+
+Los objetivos específicos son:
+
+1. **Practicar el uso de librerías clave** para análisis de datos: `pandas`, `NumPy`, `matplotlib` y `seaborn`.  
+2. **Aplicar funciones modulares en Python** para cargar, transformar y visualizar datos clínicos.  
+3. **Explorar y limpiar el dataset** para preparar variables relevantes como edad, IMC, colesterol y glucosa.  
+4. **Visualizar relaciones clínicas** mediante gráficos de línea, barras, histogramas, tortas y dispersión.  
+5. **Comparar grupos con y sin enfermedad cardiovascular** en función de variables como edad, IMC y presión arterial.  
+6. **Estandarizar el estilo gráfico** para presentaciones profesionales y facilitar la interpretación institucional.  
+7. **Preparar el entorno para futuros modelos de machine learning**, normalizando variables y entendiendo correlaciones.  
 
 ---
 
+##  Preparación de datos
 
-###  Preparación de datos
 Esta etapa incluye la carga del archivo, la exploración inicial y la transformación de variables clínicas para facilitar el análisis.
 
 **Carga del archivo:**  
@@ -56,16 +63,6 @@ Esto permite verificar:
   - `gluc`: 0 = normal, 1 = alto o muy alto  
 - **Conversión de edad:** la edad original está en días. Se transforma a años (`age_years`) para facilitar la interpretación.
 - **Filtrado de outliers:** se eliminan valores extremos de una columna numérica utilizando percentiles (1% y 99%).  Esto evita que valores atípicos distorsionen los gráficos y el análisis estadístico.
-
-
-### Visualizaciones Mathplotlib
-
-
-
-
-## 📌 Notas
-
-- Este proyecto forma parte del módulo de análisis de datos médicos de [freeCodeCamp](https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/medical-data-visualizer).
 
 ---
 
